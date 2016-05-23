@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<div class="showmessage">
+<div id="destination-map">
+</div>
+<p>
+  <strong>Message:</strong>
+  <%= @post.message %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @post.user.username %>
+</p>
+<p>
+<strong> Destination </strong>
+<%= @post.destination %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', root_path %>
+</div>
+
+	
+	<%= javascript_tag do %>
+   latitude = '<%= j @post.latitude.to_s %>';
+   longitude = '<%= j @post.longitude.to_s %>';
+   address = '<%= j @post.address %>';
+ 
+<% end %>
+
+

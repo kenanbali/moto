@@ -1,0 +1,64 @@
+	
+
+<div class"row">
+	<div class"col-md-6">
+		<div class"well">
+	<div class="images">
+	<% @images.each do |image| %>
+	<p><%= image_tag image, alt: "Bike Pics", class: "img-responsive" %></p>
+
+<% end %>
+</div>
+
+
+		<div class="new-post-area">
+
+
+							<!-- Button for meetup posts -->
+	<button id="showbutton" > Add Meetup
+			<div id="postbutton">
+			<div class="col-md-11 mtop-6">
+			<%= render 'posts/form' %>
+			
+			</div>
+	</button>	
+				
+
+			</div>
+
+
+		<!--                      -->
+		<div class="postscroll">
+					<% @following_posts.take(5).each do |post| %>
+		<div class="post-area">
+
+					<p>
+					<%= post.user.name %> <%= "@#{post.user.username}" %>
+
+					&#8226; <%= time_ago_in_words(post.created_at) %>
+					</p>
+					<p> <%= post.message.html_safe %>
+						<h5> Location: <%= post.destination%>	
+ 
+					 </h5> 
+
+     				<%= link_to 'Map Details:', post,class: "btn btn-primary"%></p>
+     				<%= link_to "", like_post_path(post), class:"glyphicon glyphicon-thumbs-up like"%>
+   					<%= link_to "" , dislike_post_path(post), class:"glyphicon glyphicon-thumbs-down unlike" %>
+   				    <%= post.score %>
+					<% end %>
+
+<button class="button1">				
+							<%= link_to "Total Meetups",show_user_path(id: current_user.id) %>
+							<%=current_user.posts.count%>
+</button>
+	<%= javascript_tag do %>
+   latitude = '<%= j @post.latitude.to_s %>';
+   longitude = '<%= j @post.longitude.to_s %>';
+   address = '<%= j @post.address %>';
+ 
+<% end %>
+
+
+
+		

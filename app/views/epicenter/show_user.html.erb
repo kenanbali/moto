@@ -1,0 +1,41 @@
+
+<div class="showuser">
+<h1> @<%= @user.name %>'s Profile &amp; Posts </h1>
+<div class="userspecs">
+	<%= image_tag @user.avatar.url, class: "profilepic" %>
+<p> <strong> User Name: </strong></br> <%= @user.name %> </p>
+<p> <strong> User Location: </strong> </br> <%= @user.location %> </p>
+<p> <strong> User Bio: </strong> </br> <%= @user.bio %></p>
+				
+
+</div>
+<% if user_signed_in? && @user.id != current_user.id %>
+
+<p>
+
+	<% if current_user.following.include?(@user.id) %>
+	<%= link_to "Unfollow", unfollow_path(id: @user.id), class: "btn btn-danger" %>
+<%else%>
+	<%= link_to "Follow", now_following_path(id: @user.id), class: "btn btn-primary" %>
+<%end%>
+</p>
+<%end%>
+
+<div class="row">
+			<% @user.posts.take(5).each do |post| %>
+
+	<div class="col-md-3">
+	<%= link_to 'Meetup Details:', post,class: "btn btn-primary"%></p>
+
+	
+	<p> <%= post.message %> </p>
+	<p> <strong>By: </strong> @<%= post.user.username %> </p>
+
+
+
+</div>
+<%end%>	
+</div>
+
+
+</div>

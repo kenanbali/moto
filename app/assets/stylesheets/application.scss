@@ -1,0 +1,118 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+
+div.hidden { display: none; }
+
+body { background: image-url("motoback.jpg") center center no-repeat fixed;
+	   background-size: cover;
+	
+}
+.opaque {
+	opacity: 0.2;
+}
+
+.row1 {
+	height: 1em;
+}
+
+.tag-topic-header {
+	background-color: #2fc2ef;
+	color: white;
+}
+
+.mini-pic {
+	width: 50px;
+}
+
+.borderline {
+	border: 1px solid #d8d8d8;
+}
+
+.pleft-10 {
+	padding-left: 10px;
+}
+
+.pbot-50 {
+	padding-bottom: 50px;
+}
+
+
+.new-post-area {
+	background-color: orange;
+	padding: 10px;
+	border: 1px solid #cbeffb;
+	border-radius: 5px 5px 0 0;
+	width:100%;
+}
+
+	.mtop-6 {
+		margin-top: 6px;
+	}
+
+input::-webkit-input-placeholder {
+color: #2fc2ef !important;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+color: #2fc2ef !important;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+color: #2fc2ef !important;
+}
+
+input:-ms-input-placeholder {
+color: #2fc2ef !important;
+}
+
+
+.profilepic {   display: block;
+    margin-left: auto;
+    margin-right: auto ; 
+				width:200px	; 
+}
+
+#destination-map {
+  width: 100%;
+  height: 300px;
+
+}
+footer {  width:100%;
+	position: absolute;
+		bottom: 0;
+		color:darkblue;
+		text-align:center;}
+.userstats { background:rgba(255,255,255,0.6);
+			}
+
+.showmessage { background: rgba(255,255,255,0.6);}
+
+.showuser { background: rgba(255,255,255,0.6);}	
+.postscroll {
+    height: 100%;
+    overflow: scroll;
+background: rgba(255,255,255,0.6);}
+
+    .button1 {text-align:right;}
+    h5 {color:blue;}
+
+
+.images { width:30%;
+		float:left;}
